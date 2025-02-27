@@ -7,4 +7,4 @@
         .\{nombre}.exe {argumento} > {nombre_salida}.txt
 
     - Script (dentro de un .bat escribir los comandos como si fuese terminal)
-        .\script.bat (enter)
+        .\script.bat 

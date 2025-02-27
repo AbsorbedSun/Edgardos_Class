@@ -4,8 +4,7 @@
 
 void combinar(int n, char simbolos[]);
 
-int main(int num_arg, char *cadenas[])
-{
+int main(int num_arg, char *cadenas[]){
     if (num_arg != 2)
     {
         exit(1);
@@ -16,8 +15,8 @@ int main(int num_arg, char *cadenas[])
     combinar(n, simbolos);
     return 0;
 };
-void combinar(int n, char simbolos[])
-{
+
+void combinar(int n, char simbolos[]){
     if (n == 0)
     {
         printf("%s\n", simbolos);
