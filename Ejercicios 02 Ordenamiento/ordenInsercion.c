@@ -1,7 +1,7 @@
 /*  
   Autor: Aldo Garcia Ambrosio (C) Marzo 2025
   Autor origina: Uso de IA (GPT o4, Claude)
-  Version: 1.4
+  Version: 1.2
   
   Programa que lee n caracteres de la entrada estándar y los ordena con el algoritmo
   de ordenamiento Insercion.
@@ -50,8 +50,7 @@ void ordenInsercion(int *arregloDes, int n) {
 // Función principal
 int main(int num_arg, char *arg_user[]) {
 
-    //Recibir por argumento el tamaño de n y el valor a buscar
-	if (num_arg != 2) 
+    //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
 	{
 		printf("\nIndique el tamanio de n y el valor a buscar - Ejemplo: [user@equipo]$ %s 100\n",arg_user[0]);
 		exit(1);
@@ -82,7 +81,7 @@ int main(int num_arg, char *arg_user[]) {
     printf("\n");
 
     //*****************************************  
-	// Algoritmo de Ordenamiento Burbuja
+	// Algoritmo de Ordenamiento Insercion
 	//*****************************************
     // Llamar a la función de ordenamiento
     ordenInsercion(arreglo, n);

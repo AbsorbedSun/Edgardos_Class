@@ -1,19 +1,17 @@
 /*  
   Autor: Aldo Garcia Ambrosio (C) Marzo 2025
   Autor origina: Uso de IA (GPT o4, Claude)
-  Version: 1.2
+  Version: 1.4
   
   Programa que lee n caracteres de la entrada estándar y los ordena con el algoritmo
-  de ordenamiento Seleccion
+  de ordenamiento Shell.
   
-  Complejidad: O(n^2).
+  Observaciones: Se tomara la estructura Main de ordenBurbuja.c para realizar agilizar la tarea y realizar el ordenamiento por inserción.
   
-  Observaciones: Se tomara la estructura Main de ordenBurbuja.c para realizar agilizar la tarea y realizar el ordenamiento por seleccion
-  
-  Compilación: Windows / Linux: gcc ordenSeleccion.c -o seleccion
+  Compilación: Windows / Linux: gcc ordenShell.c -o shell
 
-  Ejecución: ./seleccion {elementos a ordenar} < lista_caracteres.txt
-            ./seleccion {elementos a ordenar} < lista_caracteres.txt > salida.txt
+  Ejecución: ./shell {elementos a ordenar}  < lista_caracteres.txt
+            ./shell {elementos a ordenar} < lista_caracteres.txt > salida.txt
 */
 
 #include <stdio.h>
@@ -21,23 +19,28 @@
 #include <stdbool.h>
 
 /*
-void ordenSeleccion(int *arregloDes, int n)
+void ordenShell(int *arregloDes, int n)
 Recibe: int * arreglo como arregloDes y n como tamaño del arreglo
 Devuelve: void (No retorna valor explicito)
 Observaciones: Función que orderna el arregloDes de menor a mayor haciendo uso del
-algoritmo de ordenamiento Seleccion (tomando el menor numero del arreglo principal y acomodandolo seguidamente en un subarreglo acomodado en orden ascendente).
+algoritmo de ordenamiento Shell ().
 */
-void ordenSeleccion(int *arregloDes, int n) {
-    for(int k = 0; k < (n - 2); k++){
-        int p = k;
-        for(int i = k + 1; i < (n - 1); i++){
-            if(arregloDes[i] < arregloDes[p]){
-                p = i;
+void ordenShell(int *arregloDes, int n) {
+    int k = TRUNC(n/2);
+    while(k >= 1){
+        int b = 1;
+        while(b != 0){
+            b = 0;
+            for(int i = k; i <= (n - 1); i++){
+                if(arregloDes[i - k] > arregloDes[i]){
+                    int temp = arregloDes[i];
+                    arregloDes[i] = arregloDes[i - k];
+                    arregloDes[i - k] = temp;
+                    b++;
+                }
             }
         }
-        int temp = arregloDes[p];
-        arregloDes[p] = arregloDes[k];
-        arregloDes[k] = temp;
+        k = TRUNC(k/2);
     }
 }
 
@@ -76,10 +79,10 @@ int main(int num_arg, char *arg_user[]) {
     printf("\n");
 
     //*****************************************  
-	// Algoritmo de Ordenamiento Seleccion
+	// Algoritmo de Ordenamiento Shell
 	//*****************************************
     // Llamar a la función de ordenamiento
-    ordenSeleccion(arreglo, n);
+    ordenShell(arreglo, n);
     
     // Mostrar el arreglo ordenado
     printf("Arreglo despues del ordenamiento: \n");

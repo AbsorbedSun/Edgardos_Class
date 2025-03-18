@@ -55,7 +55,7 @@ void ordenBurbuja(int *arregloDes, int n) {
 // Función principal
 int main(int num_arg, char *arg_user[]) {
 
-    //Recibir por argumento el tamaño de n y el valor a buscar
+    //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
 	if (num_arg != 2) 
 	{
 		printf("\nIndique el tamanio de n y el valor a buscar - Ejemplo: [user@equipo]$ %s 100\n",arg_user[0]);
