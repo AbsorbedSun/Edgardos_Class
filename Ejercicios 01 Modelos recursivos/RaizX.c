@@ -11,7 +11,6 @@ COMPILACIÓN: gcc .\RaizX.c -o Raiz
 
 EJECUCIÓN: ./Raiz (Linux / Mac) - Raiz.exe (Windows)
 */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
