@@ -16,23 +16,32 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#define TRUNC(x) ((int)(x))
 
 /*
 void ordenShell(int *arregloDes, int n)
-Recibe: int * arreglo como arregloDes y n como tamaño del arreglo
-Devuelve: void (No retorna valor explicito)
-Observaciones: Función que orderna el arregloDes de menor a mayor haciendo uso del
-algoritmo de ordenamiento Shell ().
+Recibe: int *arregloDes como puntero al arreglo y n como tamaño del arreglo
+Devuelve: void (No retorna valor explícito)
+Observaciones: Función que ordena el arregloDes de menor a mayor haciendo uso del
+algoritmo de ordenamiento Shell (una mejora del ordenamiento por inserción que compara
+elementos distantes entre sí).
 */
 void ordenShell(int *arregloDes, int n) {
+    // Inicializa k como la mitad del tamaño del arreglo (truncado)
     int k = TRUNC(n/2);
+    // Continúa mientras el intervalo sea al menos 1
     while(k >= 1){
+        // Variable que indica si hubo intercambios en la iteración
         int b = 1;
+        // Repite hasta que no haya intercambios
         while(b != 0){
+            // Reinicio del contador
             b = 0;
+            // Recorre el arreglo comparando elementos separados por k posiciones
             for(int i = k; i <= (n - 1); i++){
+                // Si el elemento k posiciones atrás es mayor, intercambia
                 if(arregloDes[i - k] > arregloDes[i]){
+                    // Realiza el intercambio usando una variable temporal
                     int temp = arregloDes[i];
                     arregloDes[i] = arregloDes[i - k];
                     arregloDes[i - k] = temp;
@@ -40,21 +49,29 @@ void ordenShell(int *arregloDes, int n) {
                 }
             }
         }
+        // Reduce el intervalo a la mitad (truncado)
         k = TRUNC(k/2);
     }
 }
 
-// Función principal
+/*
+int main(int num_arg, char *arg_user[])
+Recibe: int num_arg como el total de argumentos ingresadoros al programa y char * arg_user (puntero) 
+como un arerglo que alamcena los argumentos de entrada del programa.
+Devuelve: 0 si termina correctamente
+Observaciones: Función principal que permite hacer uso de la función de ordenamiento shell
+para ordenar un arreglo de n elementos, ademas de imprimir el resultado en lista.
+*/
 int main(int num_arg, char *arg_user[]) {
 
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
 	if (num_arg != 2) 
 	{
-		printf("\nIndique el tamanio de n y el valor a buscar - Ejemplo: [user@equipo]$ %s 100\n",arg_user[0]);
+		printf("\nIndique el tamanio de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
 
-    // variable que define el numero de elementos a leer y ordenar
+    // Variable que define el numero de elementos a leer y ordenar
     int n = atoi(arg_user[1]);
     
     // Apartar memoria para n números enteros

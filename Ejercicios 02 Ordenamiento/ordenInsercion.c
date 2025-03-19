@@ -1,14 +1,14 @@
 /*  
   Autor: Aldo Garcia Ambrosio (C) Marzo 2025
-  Autor origina: Uso de IA (GPT o4, Claude)
-  Version: 1.2
+  Autor origina: Edgardo Adrián Franco Martínez (pseudocódigo)
+  Uso de IA (GPT o4, Claude)
+  Version: 1.3
   
-  Programa que lee n caracteres de la entrada estándar y los ordena con el algoritmo
-  de ordenamiento Insercion.
+  Programa que lee n caracteres de la entrada estándar y los ordena con el algoritmo de ordenamiento Insercion.
   
   Complejidad: O(n^2).
   
-  Observaciones: Se tomara la estructura Main de ordenBurbuja.c para realizar agilizar la tarea y realizar el ordenamiento por inserción.
+  Observaciones: Se tomara la estructura Main de ordenBurbuja.c para realizar, agilizar la tarea y permitir realizar el ordenamiento por inserción.
   
   Compilación: Windows / Linux: gcc ordenInsercion.c -o insercion
 
@@ -22,41 +22,51 @@
 
 /*
 void ordenInsercion(int *arregloDes, int n)
-Recibe: int * arreglo como arregloDes y n como tamaño del arreglo
+Recibe: int * arreglo (puntero) como arregloDes y n como tamaño del arreglo
 Devuelve: void (No retorna valor explicito)
 Observaciones: Función que orderna el arregloDes de menor a mayor haciendo uso del
-algoritmo de ordenamiento Insercion (acomodanto los elementos en orden asecendente y tomando elementos por elemento acomodandolo en su correspondiente lugar
-en el arreglo ya ordenado) a razón de O(n^2).
+algoritmo de ordenamiento Insercion (acomodando los elementos en orden ascendente
+tomando elemento por elemento acomodandolo en su correspondiente lugar en el arreglo ya 
+ordenado) a razón de O(n^2).
 */
 void ordenInsercion(int *arregloDes, int n) {
-    // Iteraciones para recorrer el arreglo (menos el nombre del arreglo)
+    // Iteracion para recorrer el arreglo (recorriendo desde el segundo elemento hasta el último)
     for(int i = 0; i <= (n - 1); i++) {
-        // Variable temporal para guardar el valor actual
+        // Variable de apoyo para el recorrido inverso del arreglo (derecha a izquierda)
         int j = i;
-        // Variable temporal para almacenar el arreglo
+        // Variable temporal para almacenar el valor actual
         int temp = arregloDes[i];
-        // Ciclo para recorrer el arreglo y acomodar los elementos en su lugar correcponente
+
+        // Ciclo para recorrer/desplazar los elementos mayores del arreglo hacia la derecha
         while(j > 0 && (temp < arregloDes[j - 1])){
-            // Ordenamiento de los elementos
+            // Movimiento de los elementos mayores a la derecha
             arregloDes[j] = arregloDes[j - 1];
             j--;
         }
-        // Asignar el valor temporal al arreglo
+        // Inserta el valor en su lugar correspondiente dentro del subarreglo ordenado
         arregloDes[j] = temp; 
     }
     
 }
 
-// Función principal
+/*
+int main(int num_arg, char *arg_user[])
+Recibe: int num_arg como el total de argumentos ingresadoros al programa y char * arg_user (puntero) 
+como un arerglo que alamcena los argumentos de entrada del programa.
+Devuelve: 0 si termina correctamente
+Observaciones: Función principal que permite hacer uso de la función de ordenamiento Insertion
+para ordenar un arreglo de n elementos, ademas de imprimir el resultado en lista.
+*/
 int main(int num_arg, char *arg_user[]) {
 
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
+	if (num_arg != 2) 
 	{
-		printf("\nIndique el tamanio de n y el valor a buscar - Ejemplo: [user@equipo]$ %s 100\n",arg_user[0]);
+		printf("\nIndique el tamanio de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
 
-    // variable que define el numero de elementos a leer y ordenar
+    // Variable que define el numero de elementos a leer y ordenar
     int n = atoi(arg_user[1]);
     
     // Apartar memoria para n números enteros

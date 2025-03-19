@@ -1,6 +1,7 @@
 /*  
   Autor: Aldo Garcia Ambrosio (C) Marzo 2025
-  Autor origina: Uso de IA (GPT o4, Claude)
+  Autor origina: Edgardo Adrián Franco Martínez (pseudocódigo)
+  Uso de IA (GPT o4, Claude)
   Version: 1.4
   
   Programa que lee n caracteres de la entrada estándar y los ordena con el algoritmo
@@ -22,47 +23,54 @@
 
 /*
 void ordenBurbuja(int *arregloDes, int n)
-Recibe: int * arreglo como arregloDes y n como tamaño del arreglo
+Recibe: int * arreglo (puntero) como arregloDes y n como tamaño del arreglo
 Devuelve: void (No retorna valor explicito)
-Observaciones: Función que orderna el arregloDes de menor a mayor haciendo uso del
-algoritmo de ordenamiento burbuja (compara de 2 en 2 y ordena) a razón de O(n^2).
+Observaciones: Función que orderna el arregloDes de menor a mayor haciendo 
+uso del algoritmo de ordenamiento burbuja (compara de 2 en 2 y ordena) a razón de O(n^2).
 */
 void ordenBurbuja(int *arregloDes, int n) {
+    // Indica si se realizaron cambios en la iteracion
     bool cambios = true;
-    // Variable de iteracion
+    // Variable de control de iteracion
     int i = 0;
-    // Ciclo determinado por el número de elementos en el arreglo
+    // Ciclo principal, se ejecuta mientras haya intercambios y no se haya recorrido todo el arreglo
     while (i <= (n - 2) && cambios) {
         cambios = false;
-        // Iteracion para comparar de 2 en 2 y ordenar
+
+        // Iteracion para recorrer y comparar de 2 en 2 (elementos consecutivos) y ordenar
         for (int j = 0; j < (n - 2) - i; j++) {
-            // Comparacion y ordenamiento
+            // Comparacion y ordenamiento (Si están desordenados, se intercambian)
             if (arregloDes[j] > arregloDes[j + 1]) {
-                // Variable auxiliar para el intercambio
+                // Variable auxiliar para el intercambio (almacena el valor antes de sobreescribirlo)
                 int aux = arregloDes[j];
                 arregloDes[j] = arregloDes[j + 1];
                 arregloDes[j + 1] = aux;
                 cambios = true;
             }
         }
-        /*Incremento de la variable para evitar el ciclo infinito o evitar
-        el cierre anticipado*/ 
         i++;
     }
     
 }
 
-// Función principal
+/*
+int main(int num_arg, char *arg_user[])
+Recibe: int num_arg como el total de argumentos ingresadoros al programa y char * arg_user (puntero) 
+como un arerglo que alamcena los argumentos de entrada del programa.
+Devuelve: 0 si termina correctamente
+Observaciones: Función principal que permite hacer uso de la función de ordenamiento burbuja
+para ordenar un arreglo de n elementos, ademas de imprimir el resultado en lista.
+*/
 int main(int num_arg, char *arg_user[]) {
 
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
 	if (num_arg != 2) 
 	{
-		printf("\nIndique el tamanio de n y el valor a buscar - Ejemplo: [user@equipo]$ %s 100\n",arg_user[0]);
+		printf("\nIndique el tamanio de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
 
-    // variable que define el numero de elementos a leer y ordenar
+    // Variable que define el numero de elementos a leer y ordenar
     int n = atoi(arg_user[1]);
     
     // Apartar memoria para n números enteros
