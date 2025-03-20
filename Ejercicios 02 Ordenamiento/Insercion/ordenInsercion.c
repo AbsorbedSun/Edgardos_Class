@@ -31,7 +31,7 @@ ordenado) a razón de O(n^2).
 */
 void ordenInsercion(int *arregloDes, int n) {
     // Iteracion para recorrer el arreglo (recorriendo desde el segundo elemento hasta el último)
-    for(int i = 0; i <= (n - 1); i++) {
+    for(int i = 0; i <= (n); i++) { // ---------------------> Elinminar (n-1) a (n) para obtener el ordenamiento correcto
         // Variable de apoyo para el recorrido inverso del arreglo (derecha a izquierda)
         int j = i;
         // Variable temporal para almacenar el valor actual

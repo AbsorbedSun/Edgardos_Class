@@ -38,7 +38,7 @@ void Merge(int *arregloDes, int posIni, int mitad, int posFin){
         // Verifica si los indices no han llegado al final de los subarreglos
         if(i <= mitad && j <= posFin){
             // Compara elementos de ambos subarreglos y toma el menor
-            if(arregloDes[i] <= arregloDes[j]){
+            if(arregloDes[i] < arregloDes[j]){
                 arregloAux[k] = arregloDes[i];
                 i++;
             }else{
@@ -57,10 +57,12 @@ void Merge(int *arregloDes, int posIni, int mitad, int posFin){
     }
     // Copia los elementos mezclados de vuelta al arreglo original
     k = posIni;
-    for(int i = 0; i < (l - 1); i++){
+    for(int i = 0; i < (l); i++){
         arregloDes[k] = arregloAux[i];
         k++;
     }
+
+    free(arregloAux);
 }
 
 /*
@@ -77,7 +79,7 @@ void mergeSort(int *arregloDes, int posIni, int posFin) {
         // Llamada recursiva para la primera mitad
         mergeSort(arregloDes, posIni, mitad);
         // Llamada recursiva para la segunda mitad
-        mergeSort(arregloDes, mitad + 1, posFin);
+        mergeSort(arregloDes, (mitad + 1), posFin);
         // Mezcla las dos mitades ordenadas
         Merge(arregloDes, posIni, mitad, posFin);
     }

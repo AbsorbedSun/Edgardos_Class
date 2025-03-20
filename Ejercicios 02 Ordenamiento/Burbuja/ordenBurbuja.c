@@ -34,11 +34,13 @@ void ordenBurbuja(int *arregloDes, int n) {
     // Variable de control de iteracion
     int i = 0;
     // Ciclo principal, se ejecuta mientras haya intercambios y no se haya recorrido todo el arreglo
-    while (i <= (n - 2) && cambios) {
+    while (i <= (n - 2) && cambios != false) {
         cambios = false;
 
         // Iteracion para recorrer y comparar de 2 en 2 (elementos consecutivos) y ordenar
-        for (int j = 0; j < (n - 2) - i; j++) {
+
+        for (int j = 0; j < n - i; j++) { // ---------------------> Elinminar (n-2) a (n) para obtener el ordenamiento correcto
+            
             // Comparacion y ordenamiento (Si están desordenados, se intercambian)
             if (arregloDes[j] > arregloDes[j + 1]) {
                 // Variable auxiliar para el intercambio (almacena el valor antes de sobreescribirlo)
@@ -66,7 +68,7 @@ int main(int num_arg, char *arg_user[]) {
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
 	if (num_arg != 2) 
 	{
-		printf("\nIndique el tamanio de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
+		printf("\nIndique el tamaño de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
 

@@ -29,11 +29,11 @@ Seleccion (busca el mínimo en la parte desordenada y lo intercambia con el prim
 */
 void ordenSeleccion(int *arregloDes, int n) {
     // Iterar sobre el arreglo partiendo del segundo elemento¿?
-    for(int k = 0; k < (n - 2); k++){
+    for(int k = 0; k <= (n - 1); k++){ // ---------------------> Elinminar (n-2) a (n-1) para obtener el ordenamiento correcto
         // Indice del menos valor en la parte ordenada, inicia tomando el primer elemento de la parte desordenada
         int posMin = k;
         // Iteracion para encontrar el minimo en la parte desordenada
-        for(int i = k + 1; i < (n - 1); i++){
+        for(int i = k + 1; i <= (n); i++){ // ---------------------> Elinminar (n-1) a (n) para obtener el ordenamiento correcto
             if(arregloDes[i] < arregloDes[posMin]){
                 // Asignar el nuevo valor minimo
                 posMin = i;

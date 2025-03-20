@@ -38,7 +38,7 @@ void ordenShell(int *arregloDes, int n) {
             // Reinicio del contador
             b = 0;
             // Recorre el arreglo comparando elementos separados por k posiciones
-            for(int i = k; i <= (n - 1); i++){
+            for(int i = k; i <= (n); i++){ // ---------------------> Elinminar (n-1) a (n) para obtener el ordenamiento correcto
                 // Si el elemento k posiciones atrás es mayor, intercambia
                 if(arregloDes[i - k] > arregloDes[i]){
                     // Realiza el intercambio usando una variable temporal

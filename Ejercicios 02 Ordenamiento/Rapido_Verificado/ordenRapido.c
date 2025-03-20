@@ -9,7 +9,7 @@
   
   Complejidad: 
   
-  Observaciones: Se tomara la estructura Main de ordenBurbuja.c para realizar agilizar la tarea y realizar el ordenamiento por merge
+  Observaciones: Se tomara la estructura Main de ordenBurbuja.c para realizar agilizar la tarea y realizar el ordenamiento rapido.
   
   Compilación: Windows / Linux: gcc ordenRapido(mezcla).c -o rapido
 
