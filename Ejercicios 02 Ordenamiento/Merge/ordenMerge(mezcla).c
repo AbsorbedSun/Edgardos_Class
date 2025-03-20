@@ -57,8 +57,8 @@ void Merge(int *arregloDes, int posIni, int mitad, int posFin){
     }
     // Copia los elementos mezclados de vuelta al arreglo original
     k = posIni;
-    for(int i = 0; i < (l); i++){
-        arregloDes[k] = arregloAux[i];
+    for(int i = 0; i < (l); i++){ // ---------------------> Elinminar (l-1) a (l) para obtener el ordenamiento correcto
+        arregloDes[k] = arregloAux[i]; 
         k++;
     }
 
