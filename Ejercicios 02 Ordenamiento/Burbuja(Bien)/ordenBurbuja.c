@@ -39,7 +39,7 @@ void ordenBurbuja(int *arregloDes, int n) {
 
         // Iteracion para recorrer y comparar de 2 en 2 (elementos consecutivos) y ordenar
 
-        for (int j = 0; j < n - i; j++) { // ---------------------> Elinminar (n-2) a (n) para obtener el ordenamiento correcto
+        for (int j = 0; j < (n - 2) - i; j++) {
             
             // Comparacion y ordenamiento (Si están desordenados, se intercambian)
             if (arregloDes[j] > arregloDes[j + 1]) {
@@ -66,8 +66,7 @@ para ordenar un arreglo de n elementos, ademas de imprimir el resultado en lista
 int main(int num_arg, char *arg_user[]) {
 
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
-	if (num_arg != 2) 
-	{
+	if (num_arg != 2) {
 		printf("\nIndique el tamaño de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
@@ -85,13 +84,13 @@ int main(int num_arg, char *arg_user[]) {
     }
     
     //Lee de la entrada estandar los n valores y los coloca en un arreglo
-    for (int i = 0; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arreglo[i]);
     }
     
     // Mostrar el arreglo antes del ordenamiento
     printf("Arreglo antes del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     printf("\n");
@@ -104,7 +103,7 @@ int main(int num_arg, char *arg_user[]) {
     
     // Mostrar el arreglo ordenado
     printf("Arreglo despues del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     

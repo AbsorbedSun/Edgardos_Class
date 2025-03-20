@@ -29,11 +29,11 @@ Seleccion (busca el mínimo en la parte desordenada y lo intercambia con el prim
 */
 void ordenSeleccion(int *arregloDes, int n) {
     // Iterar sobre el arreglo partiendo del segundo elemento¿?
-    for(int k = 0; k <= (n - 1); k++){ // ---------------------> Elinminar (n-2) a (n-1) para obtener el ordenamiento correcto
+    for(int k = 0; k <= (n - 2); k++){
         // Indice del menos valor en la parte ordenada, inicia tomando el primer elemento de la parte desordenada
         int posMin = k;
         // Iteracion para encontrar el minimo en la parte desordenada
-        for(int i = k + 1; i <= (n); i++){ // ---------------------> Elinminar (n-1) a (n) para obtener el ordenamiento correcto
+        for(int i = k + 1; i <= (n - 1); i++){
             if(arregloDes[i] < arregloDes[posMin]){
                 // Asignar el nuevo valor minimo
                 posMin = i;
@@ -76,13 +76,13 @@ int main(int num_arg, char *arg_user[]) {
     }
     
     //Lee de la entrada estandar los n valores y los coloca en un arreglo
-    for (int i = 0; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arreglo[i]);
     }
     
     // Mostrar el arreglo antes del ordenamiento
     printf("Arreglo antes del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     printf("\n");
@@ -95,7 +95,7 @@ int main(int num_arg, char *arg_user[]) {
     
     // Mostrar el arreglo ordenado
     printf("Arreglo despues del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     

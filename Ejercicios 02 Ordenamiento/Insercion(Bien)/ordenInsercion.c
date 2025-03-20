@@ -31,7 +31,7 @@ ordenado) a razón de O(n^2).
 */
 void ordenInsercion(int *arregloDes, int n) {
     // Iteracion para recorrer el arreglo (recorriendo desde el segundo elemento hasta el último)
-    for(int i = 0; i <= (n); i++) { // ---------------------> Elinminar (n-1) a (n) para obtener el ordenamiento correcto
+    for(int i = 0; i <= (n - 1); i++) { 
         // Variable de apoyo para el recorrido inverso del arreglo (derecha a izquierda)
         int j = i;
         // Variable temporal para almacenar el valor actual
@@ -54,15 +54,14 @@ int main(int num_arg, char *arg_user[])
 Recibe: int num_arg como el total de argumentos ingresadoros al programa y char * arg_user (puntero) 
 como un arerglo que alamcena los argumentos de entrada del programa.
 Devuelve: 0 si termina correctamente
-Observaciones: Función principal que permite hacer uso de la función de ordenamiento Insertion
+Observaciones: Función principal que permite hacer uso de la función de ordenamiento burbuja
 para ordenar un arreglo de n elementos, ademas de imprimir el resultado en lista.
 */
 int main(int num_arg, char *arg_user[]) {
 
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
-	if (num_arg != 2) 
-	{
-		printf("\nIndique el tamanio de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
+	if (num_arg != 2) {
+		printf("\nIndique el tamaño de n y el valor / intervalo de valores a usar - Ejemplo: [cantidad] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
 
@@ -79,13 +78,13 @@ int main(int num_arg, char *arg_user[]) {
     }
     
     //Lee de la entrada estandar los n valores y los coloca en un arreglo
-    for (int i = 0; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arreglo[i]);
     }
     
     // Mostrar el arreglo antes del ordenamiento
     printf("Arreglo antes del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     printf("\n");
@@ -98,7 +97,7 @@ int main(int num_arg, char *arg_user[]) {
     
     // Mostrar el arreglo ordenado
     printf("Arreglo despues del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     

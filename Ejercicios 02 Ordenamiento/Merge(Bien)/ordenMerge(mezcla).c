@@ -98,7 +98,7 @@ int main(int num_arg, char *arg_user[]) {
     //Recibir por argumento el tamaño de n y el valor / intervalo de valores a usar
 	if (num_arg != 2) 
 	{
-		printf("\nIndique el tamanio de n y el valor / intervalo de valores a usar - Ejemplo: [fin intervalo] < {numeros.txt}\n",arg_user[0]);
+		printf("\nIndique el tamaño de n y el valor / intervalo de valores a usar - Ejemplo: [fin intervalo] < {numeros.txt}\n",arg_user[0]);
 		exit(1);
 	} 
 
@@ -116,13 +116,13 @@ int main(int num_arg, char *arg_user[]) {
     }
     
     //Lee de la entrada estandar los n valores y los coloca en un arreglo
-    for (int i = 0; i <= fin; i++) {
+    for (int i = 0; i < fin; i++) {
         scanf("%d", &arreglo[i]);
     }
     
     // Mostrar el arreglo antes del ordenamiento
     printf("Arreglo antes del ordenamiento: \n");
-    for (int i = 1; i <= fin; i++) {
+    for (int i = 0; i < fin; i++) {
         printf("%d \n", arreglo[i]);
     }
     printf("\n");
@@ -131,11 +131,11 @@ int main(int num_arg, char *arg_user[]) {
 	// Algoritmo de Ordenamiento Merge
 	//*****************************************
     // Llamar a la función de ordenamiento
-    mergeSort(arreglo, 1, fin);
+    mergeSort(arreglo, 0, fin - 1);
     
     // Mostrar el arreglo ordenado
     printf("Arreglo despues del ordenamiento: \n");
-    for (int i = 1; i <= fin; i++) {
+    for (int i = 0; i < fin; i++) {
         printf("%d \n", arreglo[i]);
     }
     

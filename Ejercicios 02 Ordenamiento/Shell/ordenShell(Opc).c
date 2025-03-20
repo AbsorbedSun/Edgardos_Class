@@ -38,7 +38,7 @@ void ordenShell(int *arregloDes, int n) {
             // Reinicio del contador
             b = 0;
             // Recorre el arreglo comparando elementos separados por k posiciones
-            for(int i = k; i <= (n); i++){ // ---------------------> Elinminar (n-1) a (n) para obtener el ordenamiento correcto
+            for(int i = k; i <= (n - 1); i++){
                 // Si el elemento k posiciones atrás es mayor, intercambia
                 if(arregloDes[i - k] > arregloDes[i]){
                     // Realiza el intercambio usando una variable temporal
@@ -84,13 +84,13 @@ int main(int num_arg, char *arg_user[]) {
     }
     
     //Lee de la entrada estandar los n valores y los coloca en un arreglo
-    for (int i = 0; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arreglo[i]);
     }
     
     // Mostrar el arreglo antes del ordenamiento
     printf("Arreglo antes del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     printf("\n");
@@ -103,7 +103,7 @@ int main(int num_arg, char *arg_user[]) {
     
     // Mostrar el arreglo ordenado
     printf("Arreglo despues del ordenamiento: \n");
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d \n", arreglo[i]);
     }
     
