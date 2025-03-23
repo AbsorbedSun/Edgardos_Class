@@ -91,8 +91,14 @@ void quickSort(int *arregloDes, int posIni, int posFin) {
     }
 }
 	
-
-// Funcion principal
+/*
+int main(int num_arg, char *arg_user[])
+Recibe: int num_arg como el total de argumentos ingresadoros al programa y char * arg_user (puntero) 
+como un arerglo que alamcena los argumentos de entrada del programa.
+Devuelve: 0 si termina correctamente
+Observaciones: Función principal que permite hacer uso de la función de ordenamiento burbuja
+para ordenar un arreglo de n elementos, ademas de imprimir el tiempo de ejecucion y elresultado en lista .
+*/
 int main(int num_arg, char* arg_user[]){	
     //Variables para la medición de tiempos    
     clock_t t_inicio, t_final;

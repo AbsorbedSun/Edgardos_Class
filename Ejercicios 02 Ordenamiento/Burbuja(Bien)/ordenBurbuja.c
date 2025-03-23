@@ -38,7 +38,6 @@ void ordenBurbuja(int *arregloDes, int n) {
         cambios = false;
 
         // Iteracion para recorrer y comparar de 2 en 2 (elementos consecutivos) y ordenar
-
         for (int j = 0; j < (n - 2) - i; j++) {
             
             // Comparacion y ordenamiento (Si están desordenados, se intercambian)
