@@ -121,7 +121,7 @@ int Pivot(int *ARREGLODES, int posIni, int posFin) {
     // Mientras los indices no se crucen...
     while (i <= j){
         // Avanza i mientras el elemento sea menor o igual al pivote y no se salga del límite
-        while (ARREGLODES[i] <= piv && i <= posFin){
+        while (ARREGLODES[i] <= piv && i < posFin){
             i++;  
         }
         // Retrocede j mientras el elemento sea mayor que el pivote
