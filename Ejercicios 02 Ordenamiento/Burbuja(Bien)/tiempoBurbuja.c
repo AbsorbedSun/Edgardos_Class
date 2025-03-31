@@ -105,7 +105,7 @@ void ordenBurbuja(int *ARREGLODES, int n) {
 
         // Iteracion para recorrer y comparar de 2 en 2 (elementos consecutivos) y ordenar
 
-        for (int j = 0; j < (n - 2) - i; j++) {
+        for (int j = 0; j < (n - 1) - i; j++) {
             
             // Comparacion y ordenamiento (Si están desordenados, se intercambian)
             if (ARREGLODES[j] > ARREGLODES[j + 1]) {
