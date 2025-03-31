@@ -1,5 +1,5 @@
 /*
-tiempo.c
+tiempoShell.c
 Autor: Aldo Garcia Ambrosio (C) Marzo 2025
 Autor origina: Edgardo Adrián Franco Martínez
 Uso de IA (GPT o4, Claude)
@@ -78,8 +78,8 @@ int main(int num_arg, char* arg_user[]){
     printf("\nTiempo medido: %.10f segundos.", t_intervalo);
 	
 	//Enviar a la salida estandar el ARREGLO final
-	for(int i = 0; i < n; i++)
-		printf("\nArreglo[%d] = %d", i, ARREGLO[i]);
+	//for(int i = 0; i < n; i++)
+	//	printf("\nArreglo[%d] = %d", i, ARREGLO[i]);
 
 	// Liberar la memoria
     free(ARREGLO);

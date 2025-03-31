@@ -1,5 +1,5 @@
 /*
-tiempo.c
+tiempoSeleccion.c
 Autor: Aldo Garcia Ambrosio (C) Marzo 2025
 Autor origina: Edgardo Adrián Franco Martínez
 Uso de IA (GPT o4, Claude)

@@ -1,0 +1,9 @@
+
+Tiempo medido: 3331.2460000000 segundos.
+Tiempo medido: 3130.3550000000 segundos.
+Tiempo medido: 3135.0760000000 segundos.
+Tiempo medido: 3001.7600000000 segundos.
+Tiempo medido: 36304.1630000000 segundos.
+Tiempo medido: 3832.7720000000 segundos.
+Tiempo medido: 3044.1460000000 segundos.
+Tiempo medido: 3029.6410000000 segundos.
